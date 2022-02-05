@@ -29,8 +29,8 @@ public class MyArrayListString implements MyListString {
 
     @Override
     public String get(int index) {
-        if(index < 0 || index >= size){
-            //some input validation
+        if(index < 0 || index >= size){ // Hvis Index er - (negativ) eller hvis index er større eller lik "størrelsen" på arraye.
+            //some input validation     Altså, vi kan ikke kalle på index pos 10 i en array med 10 elementer (0-9)
             return null;
         }
         return data[index];
