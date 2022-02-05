@@ -6,9 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public abstract class ArrayUtilsTestTemplate {
-
     protected abstract ArrayUtils getNewInstance();
-
     protected ArrayUtils utils;
 
     @BeforeEach
