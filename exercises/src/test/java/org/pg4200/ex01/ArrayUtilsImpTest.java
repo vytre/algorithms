@@ -4,7 +4,7 @@ public class ArrayUtilsImpTest extends  ArrayUtilsTestTemplate{
 
     @Override
     protected ArrayUtils getNewInstance() {
-        return null;
+        return new ArrayUtilsImp();
     }
 
 }
