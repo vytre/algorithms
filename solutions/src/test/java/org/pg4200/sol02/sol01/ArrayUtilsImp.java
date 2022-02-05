@@ -1,4 +1,4 @@
-package org.pg4200.sol01;
+package org.pg4200.sol02.sol01;
 
 import org.pg4200.ex01.ArrayUtils;
 
@@ -24,7 +24,6 @@ public class ArrayUtilsImp implements ArrayUtils {
         checkArray(array);
 
         int max = array[0];
-
         for(int i=1; i<array.length; i++){
             int val = array[i];
             if(val > max){

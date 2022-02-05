@@ -1,4 +1,4 @@
-package org.pg4200.sol01;
+package org.pg4200.sol02.sol01;
 
 public class MyArrayListInteger {
 

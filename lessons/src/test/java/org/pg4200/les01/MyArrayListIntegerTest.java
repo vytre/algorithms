@@ -1,10 +1,11 @@
-package org.pg4200.sol01;
+package org.pg4200.les01;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.pg4200.sol02.sol01.MyArrayListInteger;
+import org.pg4200.les01.arraylist.MyArrayListInteger;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class MyArrayListIntegerTest {
 
@@ -15,7 +16,6 @@ public class MyArrayListIntegerTest {
         //before each test is executed, create a new
         data = new MyArrayListInteger(10);
     }
-
 
     @Test
     public void testEmpty(){
@@ -77,6 +77,4 @@ public class MyArrayListIntegerTest {
         assertNull(data.get(-5));
         assertNull(data.get(42));
     }
-
-
 }
