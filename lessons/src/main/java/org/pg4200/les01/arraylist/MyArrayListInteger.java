@@ -12,10 +12,10 @@ public class MyArrayListInteger {
         data = new int[size];
     }
 
-    public int get(int index) {
+    public Integer get(int index) {
         if(index < 0 || index >= size){ // Hvis Index er - (negativ) eller hvis index er større eller lik "størrelsen" på arraye.
             //some input validation     Altså, vi kan ikke kalle på index pos 10 i en array med 10 elementer (0-9)
-            return 0;
+            return null;
         }
         return data[index];
     }
