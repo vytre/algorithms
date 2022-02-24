@@ -38,6 +38,10 @@ public class MyArrayList<T> implements MyList<T> {
                 eg, if we remove first, from
                 [1 2 3 4]
                 we get
+                [2 2 3 4]
+                [2 3 3 4]
+                [2 3 4 4]
+                size--
                 [2 3 4] 4
 
                 Note: we use "size" to tell how long is the list.
