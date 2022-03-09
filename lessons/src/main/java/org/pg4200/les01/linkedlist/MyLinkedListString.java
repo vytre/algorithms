@@ -95,7 +95,7 @@ public class MyLinkedListString implements MyListString {
         tail = node;
 
         /*
-            Here we did modify the the "tail", but not the "head". Why?
+            Here we did modify the "tail", but not the "head". Why?
             Wouldn't "head.next" always be null, and so the list will have
             at most 1 element?
 
