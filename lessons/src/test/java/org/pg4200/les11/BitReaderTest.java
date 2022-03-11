@@ -108,6 +108,20 @@ public class BitReaderTest {
     }
 
     @Test
+    public void testNewLine(){
+
+        char val = '\n';
+        BitWriter writer = new BitWriter();
+        writer.write(val);
+
+        BitReader reader = new BitReader(writer.extract());
+
+        int res = reader.readChar();
+
+        assertEquals(val, res);
+    }
+
+    @Test
     public void testIntWithNegativeBytes(){
 
         int val = 0b1000_0000_1000_0000;
