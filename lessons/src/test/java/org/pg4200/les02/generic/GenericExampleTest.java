@@ -22,7 +22,7 @@ public class GenericExampleTest {
 
         String foo = "foo";
 
-        Object x = example.identityObject(foo);
+        Object x = example.identityObject(foo); // Object x = "foo"
         assertNotNull(x);
 
         /*
@@ -58,6 +58,7 @@ public class GenericExampleTest {
         Integer w = example.identityGenericOnMethod("bar", 5);
         assertNotNull(z);
         assertNotNull(w);
+        assertEquals(5,w);
     }
 
 

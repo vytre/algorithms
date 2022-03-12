@@ -1,5 +1,7 @@
 package org.pg4200.les02.generic;
 
+import java.awt.*;
+
 /**
  * The name chosen for the generic types does not really matter, but T (for "Type")
  * is a common choice.
@@ -9,6 +11,7 @@ package org.pg4200.les02.generic;
  *
  * Created by arcuri82 on 07-Jun-18.
  */
+// Polymorphism uses those methods to perform different tasks. This allows us to perform a single action in different ways
 public class GenericExample<T> {
 
     public Object identityObject(Object x){
@@ -19,13 +22,44 @@ public class GenericExample<T> {
         return x;
     }
 
+    public static void main(String[] args) {
+
+        // identityGeneric
+        GenericExample <String> stringObjectExample = new GenericExample<>();
+        String fooString = "foo";
+        Object x = stringObjectExample.identityObject(fooString);
+        System.out.println(x);
+        String y = (String) stringObjectExample.identityObject(fooString);
+        System.out.println(y);
+
+        GenericExample <Integer> integerGenericExample = new GenericExample<>();
+        Integer wrappedFoo = 4;
+        int normalFoo = integerGenericExample.identityGeneric(wrappedFoo);
+        System.out.println(normalFoo);
+
+        GenericExample <String> stringGenericExample = new GenericExample<>();
+        String stringFoo = "fooString";
+        String normal = stringGenericExample.identityGeneric(stringFoo);
+        System.out.println(normal);
+
+        // identityGenericOnMethod
+
+
+
+        boolean d = integerGenericExample.identityGenericOnMethod(2,false);
+        System.out.println(d);
+
+
+
+    }
+
     /*
         Besides declaring a generic type for the whole class, we can also have it
         explicitly on the methods.
         This is done by declaring them (eg, "<Z>") between the access-right keyword (eg, "public")
         and the return type of the function (eg, "Z").
      */
-    public <Z> Z identityGenericOnMethod(T t, Z z){
+    public <Z> Z identityGenericOnMethod(T t, Z z){ // Dette er typisk remove and return value removed kanskje? eg. return the string at t index that has the String z, litt dumbt eksempel...
         return z;
     }
 
@@ -63,10 +97,10 @@ public class GenericExample<T> {
      */
     public Comparable max(Comparable x, Comparable y){
 
-        if(x.compareTo(y) > 0){
+        if(x.compareTo(y) > 0){ // Hvis X sammenlignet med Y er Større en 0, returner X
             return x;
         } else {
-            return y;
+            return y; // Hvis X sammenlignet med Y er Mindre en 0, returner Y
         }
     }
 
