@@ -34,11 +34,10 @@ public class ArrayUtilsImp implements ArrayUtils{
     public double mean(int[] array) throws IllegalArgumentException {
             checkForIllegalArguments(array);
             int totalValue = 0;
-            int meanValue = 0;
             for (int i = 0; i < array.length; i++) {
                 totalValue += array[i];
             }
-            meanValue = totalValue/ array.length;
+            int meanValue = totalValue/ array.length;
             return meanValue;
     }
 

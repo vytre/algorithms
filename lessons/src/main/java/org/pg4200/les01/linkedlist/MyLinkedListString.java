@@ -66,7 +66,7 @@ public class MyLinkedListString implements MyListString {
             }
 
             //go to the next element
-            current = current.next;
+            current = current.next; // Traversing...
             counter++;
         }
 
