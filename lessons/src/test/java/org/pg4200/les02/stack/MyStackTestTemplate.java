@@ -37,9 +37,12 @@ public abstract class MyStackTestTemplate {
 
         assertEquals(0, stack.size());
 
+        stack.push(0);
         stack.push(5);
+        stack.push(33);
+        stack.push(44);
 
-        assertEquals(1, stack.size());
+        assertEquals(4, stack.size());
     }
 
 
