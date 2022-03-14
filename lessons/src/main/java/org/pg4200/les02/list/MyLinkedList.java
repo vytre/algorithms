@@ -55,7 +55,7 @@ public class MyLinkedList<T> implements MyList<T> {
 
             ListNode current = head;
             int counter = 0;
-            while(counter != index - 1){
+            while(counter != index - 1){ // 1
                 current = current.next;
                 counter++;
             }

@@ -82,6 +82,16 @@ public class MyArrayList<T> implements MyList<T> {
             data[j+1] = data[j];
         }
 
+        /*eg, if we add 9 at index 2
+                [1 2 3 4 5] // Size = 5;
+        we get
+                [1 2 3 4 5] 5
+                [1 2 3 4 4] 5
+                [1 2 3 3 4] 5
+                [1 2 9 3 4] 5
+        size++
+                [1 2 9 3 4 5]
+
         /*
             What if index >= data.length???
             This will be addressed in the exercises.
