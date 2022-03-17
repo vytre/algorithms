@@ -97,7 +97,6 @@ public class MyQueueArray<T> implements MyQueue<T>{
                 data = tmp;
             }
         }
-
         data[tail] = value;
     }
 

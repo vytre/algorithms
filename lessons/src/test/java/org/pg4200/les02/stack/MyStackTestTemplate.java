@@ -63,17 +63,22 @@ public abstract class MyStackTestTemplate {
     public void testPushAndPop(){
 
         int n = 42;
+        int a = 4;
+        int b = 2;
 
         assertEquals(0, stack.size());
 
         stack.push(n);
+        stack.push(a);
+        stack.push(b);
 
-        assertEquals(1, stack.size());
+        assertEquals(3, stack.size());
 
         int res = stack.pop();
+        System.out.println(stack.peek());
 
-        assertEquals(n, res);
-        assertEquals(0, stack.size());
+        assertEquals(b, res);
+        assertEquals(2, stack.size());
     }
 
 

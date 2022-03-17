@@ -34,6 +34,7 @@ public abstract class MyQueueTestTemplate {
 
         queue.enqueue(1);
 
+
         assertEquals(1, queue.size());
     }
 
@@ -83,6 +84,8 @@ public abstract class MyQueueTestTemplate {
         queue.enqueue(0);
         queue.enqueue(1);
         queue.enqueue(2);
+
+        
 
         assertEquals(0, queue.dequeue().intValue());
         assertEquals(1, queue.dequeue().intValue());

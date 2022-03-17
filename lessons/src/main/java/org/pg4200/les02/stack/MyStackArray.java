@@ -4,7 +4,7 @@ import org.pg4200.les02.list.MyArrayList;
 
 public class MyStackArray<T> extends MyArrayList<T> implements MyStack<T>{
 
-    public MyStackArray() {
+    public MyStackArray() { // Dene er her for å opprette tests.
     }
 
     public MyStackArray(int capacity) {
