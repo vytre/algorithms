@@ -150,6 +150,19 @@ public abstract class MyQueueTestTemplate {
             queue.enqueue(i);
         }
 
+        /* Her starten Object[] data med 10 i capasity, hver gang den blir større en 10, dobbler capasity
+        * Så det blir noe som dette
+        * 10
+        * 20
+        * 40
+        * 80
+        * ...
+        * Siden vi legger til 1000 elementer ender vi opp med
+        * 640
+        * 1280
+        * */
+
+        System.out.println(queue.size());
         assertEquals(n, queue.size());
 
         for(int i=0; i< n; i++){

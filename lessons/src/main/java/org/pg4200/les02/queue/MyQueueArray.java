@@ -97,6 +97,7 @@ public class MyQueueArray<T> implements MyQueue<T>{
                 data = tmp;
             }
         }
+        System.out.println(size());
         data[tail] = value;
     }
 

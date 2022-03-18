@@ -4,6 +4,6 @@ public class MyArrayListResizableTest extends MyListTestTemplate{
 
     @Override
     protected <T> MyList<T> getNewInstance(Class<T> klass) {
-        return null;
+        return new MyArrayListResizable<>();
     }
 }
