@@ -85,7 +85,7 @@ public abstract class MyQueueTestTemplate {
         queue.enqueue(1);
         queue.enqueue(2);
 
-        
+
 
         assertEquals(0, queue.dequeue().intValue());
         assertEquals(1, queue.dequeue().intValue());
