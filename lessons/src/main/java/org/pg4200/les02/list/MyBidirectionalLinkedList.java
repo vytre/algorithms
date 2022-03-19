@@ -1,10 +1,5 @@
-package org.pg4200.sol02;
+package org.pg4200.les02.list;
 
-import org.pg4200.les02.list.MyList;
-
-/**
- * Created by arcuri82 on 05-Jun-19.
- */
 public class MyBidirectionalLinkedList<T> implements MyList<T> {
 
     private class ListNode{
