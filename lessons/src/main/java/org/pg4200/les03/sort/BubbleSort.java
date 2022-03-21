@@ -3,6 +3,8 @@ package org.pg4200.les03.sort;
 // WARNING: this is one of the 12 classes you need to study and know by heart
 
 
+import java.util.Arrays;
+
 /**
  * Created by arcuri82 on 21-Aug-17.
  */
@@ -27,7 +29,7 @@ public class BubbleSort implements MySort {
              */
 
             swapped = false;
-
+            System.out.println("--Fra begynnelsen--");
             for (int i = 0; i < array.length - 1; i++) {
                 int j = i + 1;
                 /*
@@ -35,11 +37,14 @@ public class BubbleSort implements MySort {
                     then swap them.
                     Like a bubble, the highest value will fly up.
                  */
-
+                System.out.println("MyArray " + Arrays.toString(array));
+                System.out.println("Checking: "+array[i] +"[" + i +"]" + " with "+ array[j]+"[" + j +"]" );
+                System.out.println();
                 if (array[i].compareTo(array[j]) > 0) {
                     T tmp = array[i];
                     array[i] = array[j];
                     array[j] = tmp;
+
 
                     swapped = true;
                 }

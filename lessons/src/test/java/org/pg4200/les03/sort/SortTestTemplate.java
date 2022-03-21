@@ -51,21 +51,21 @@ public abstract class SortTestTemplate {
     @Test
     public void testAlreadySorted(){
 
-        String[] array = {"a", "b", "c", "d"};
+        String[] array = {"A", "B", "C", "D"};
 
         sorter.sort(array);
 
-        assertEquals("a", array[0]);
-        assertEquals("b", array[1]);
-        assertEquals("c", array[2]);
-        assertEquals("d", array[3]);
+        assertEquals("A", array[0]);
+        assertEquals("B", array[1]);
+        assertEquals("C", array[2]);
+        assertEquals("D", array[3]);
     }
 
 
     @Test
     public void testInverted(){
 
-        String[] array = {"d", "c", "b", "a"};
+        String[] array = {"c", "b", "a","d"};
 
         sorter.sort(array);
 
@@ -73,6 +73,7 @@ public abstract class SortTestTemplate {
         assertEquals("b", array[1]);
         assertEquals("c", array[2]);
         assertEquals("d", array[3]);
+
     }
 
 
@@ -91,14 +92,15 @@ public abstract class SortTestTemplate {
 
 
     @Test
-    public void testRandom(){
+    public void testRandom() {
 
         Random random = new Random();
 
-        for(int i=0; i<100; i++){
+        for (int i = 0; i < 100; i++) {
+            System.out.println("------------------------------"+i+"---------------------");
 
             Integer[] array = new Integer[10];
-            for(int j=0; j<array.length; j++){
+            for (int j = 0; j < array.length; j++) {
                 array[j] = random.nextInt(20);
             }
 
@@ -109,8 +111,8 @@ public abstract class SortTestTemplate {
                 there are still properties that we can check, and that
                 are independent of the input, like [j] <= [j+1].
              */
-            for(int j=0; j<array.length-1; j++){
-                assertTrue(array[j] <= array[j+1], Arrays.toString(array));
+            for (int j = 0; j < array.length - 1; j++) {
+                assertTrue(array[j] <= array[j + 1], Arrays.toString(array));
             }
 
             /*
@@ -121,6 +123,66 @@ public abstract class SortTestTemplate {
                 the values in the array to 0 ???
              */
         }
+    }
 
+    @Test
+    public void testVegard() {
+
+        Random random = new Random();
+
+
+        Integer[] array = new Integer[4];
+        for (int j = 0; j < array.length; j++) {
+            array[j] = random.nextInt(10);
+        }
+
+        sorter.sort(array);
+
+    /*
+    Regardless of the input array (which could be random)
+    there are still properties that we can check, and that
+    are independent of the input, like [j] <= [j+1].
+    */
+        for (int j = 0; j < array.length - 1; j++) {
+            assertTrue(array[j] <= array[j + 1], Arrays.toString(array));
+        }
+
+     /*
+    Is the above check enough to determine if an array is
+    sorted???
+    What if an implementation of "sorter.sort" just sets all
+    the values in the array to 0 ???
+    */
+    }
+
+    @Test
+    public void testVegard2() {
+
+        Integer[] array = new Integer[4];
+        array[0] = 1;
+        array[1] = 7;
+        array[2] = 0;
+        array[3] = 9;
+
+
+
+
+        sorter.sort(array);
+
+    /*
+    Regardless of the input array (which could be random)
+    there are still properties that we can check, and that
+    are independent of the input, like [j] <= [j+1].
+    */
+        for (int j = 0; j < array.length - 1; j++) {
+            assertTrue(array[j] <= array[j + 1], Arrays.toString(array));
+        }
+
+     /*
+    Is the above check enough to determine if an array is
+    sorted???
+    What if an implementation of "sorter.sort" just sets all
+    the values in the array to 0 ???
+    */
     }
 }
