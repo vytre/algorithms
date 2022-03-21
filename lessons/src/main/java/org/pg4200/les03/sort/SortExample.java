@@ -9,6 +9,8 @@ public class SortExample {
 
     public static void main(String[] args){
 
+
+
         String[] names = {
                 "Sara",
                 "Jack",
@@ -37,6 +39,7 @@ public class SortExample {
         for(String s : names){
             System.out.println(s);
         }
+
     }
 
 }
