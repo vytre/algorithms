@@ -42,7 +42,6 @@ public class OptimizedBubbleSort {
             }
 
         }
-
         return counter;
     }
 
