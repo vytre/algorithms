@@ -4,7 +4,6 @@ public class SortCheckerImpTest extends SortCheckerTestTemplate{
 
     @Override
     protected SortChecker getNewInstance() {
-        return new SortCheckerImp(){
-        };
+        return new SortCheckerImp();
     }
 }
