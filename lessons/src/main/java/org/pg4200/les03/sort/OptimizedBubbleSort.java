@@ -27,7 +27,6 @@ public class OptimizedBubbleSort {
 
             for (int i = 0; i < limit; i++) {
                 int j = i+1;
-
                 counter++;
 
                 if(comparator.compare(array[i],array[j]) >0){

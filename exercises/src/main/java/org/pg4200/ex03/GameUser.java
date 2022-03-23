@@ -13,16 +13,18 @@ public class GameUser {
         this.points = points;
     }
 
+    // Getters
     public String getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
     public int getPoints() {
         return points;
+    }
+
+    // Setters
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public void setPoints(int points) {
