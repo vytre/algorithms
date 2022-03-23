@@ -15,6 +15,7 @@ public class SortCheckerImp implements SortChecker{
         boolean swapped = true;
 
         while (swapped){
+            swapped = false;
             for (int i = 0; i < original.length-1; i++) {
                 int j = i+1;
 
