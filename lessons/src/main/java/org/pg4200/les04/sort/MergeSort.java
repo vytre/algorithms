@@ -62,7 +62,7 @@ public class MergeSort implements MySort {
 
         mergesort(low, middle, array, buffer);
 
-        mergesort(middle + 1, high, array, buffer);
+        mergesort(middle + 1, high, array, buffer); // Middle +1 fordi middle er i den over
 
         merge(low, middle, high, array, buffer);
     }
