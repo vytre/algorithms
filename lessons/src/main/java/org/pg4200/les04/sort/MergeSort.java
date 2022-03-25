@@ -5,6 +5,8 @@ package org.pg4200.les04.sort;
 
 import org.pg4200.les03.sort.MySort;
 
+import java.util.Arrays;
+
 /**
  * Created by arcuri82 on 21-Aug-17.
  */
@@ -43,13 +45,21 @@ public class MergeSort implements MySort {
             same problem with multi-threading.
          */
         T[] buffer = (T[]) new Comparable[array.length];
+        System.out.println("Buffer: "+ Arrays.toString(buffer));
+        System.out.println("Array: "+ Arrays.toString(array));
 
-        mergesort(0, array.length - 1, array, buffer);
+        mergesort(0, array.length - 1, array, buffer); // 0 er Starten på array, ar.length -1 er index 3 i length = 4
     }
 
     private <T extends Comparable<T>> void mergesort(int low, int high, T[] array, T[] buffer) {
+        System.out.println();
+        System.out.println("Buffer: "+ Arrays.toString(buffer));
+        System.out.println("Array: "+ Arrays.toString(array));
+        System.out.println("Low: "+low);
+        System.out.println("High: "+high);
 
         if (low >= high) {
+            System.out.println(Arrays.toString(array));
             /*
                 This means we are in a subarea of array with 1 or less elements.
                 As such subarray is sorted by definition (ie less than 2 elements),
@@ -59,12 +69,14 @@ public class MergeSort implements MySort {
         }
 
         int middle = low + (high - low) / 2;
+        System.out.println("Middle: "+ middle);
 
         mergesort(low, middle, array, buffer);
 
         mergesort(middle + 1, high, array, buffer); // Middle +1 fordi middle er i den over
 
         merge(low, middle, high, array, buffer);
+        System.out.println();
     }
 
     private <T extends Comparable<T>> void merge(int low, int middle, int high, T[] array, T[] buffer) {

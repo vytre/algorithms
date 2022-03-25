@@ -12,6 +12,7 @@ public class RecursiveSumOfN {
      */
     public static int sumOfAllValues(int n){
 
+
         if(n < 0){
             throw new IllegalArgumentException("Invalid negative value: " + n);
         }
@@ -27,6 +28,7 @@ public class RecursiveSumOfN {
             Recursion calls are often done on "smaller" inputs.
             The keep calling and decreasing until a stopping condition is met.
          */
+
         return n + sumOfAllValues(n-1);
     }
 
