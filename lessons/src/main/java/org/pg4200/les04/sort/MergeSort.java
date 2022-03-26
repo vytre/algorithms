@@ -11,7 +11,6 @@ import java.util.Arrays;
  * Created by arcuri82 on 21-Aug-17.
  */
 public class MergeSort implements MySort {
-    private int teller = 0;
 
 
     @Override
@@ -47,16 +46,11 @@ public class MergeSort implements MySort {
             same problem with multi-threading.
          */
         T[] buffer = (T[]) new Comparable[array.length]; // Hjelpe Array
-        /*System.out.println("In Sort Buffer: "+ Arrays.toString(buffer));
-        System.out.println("In Sort Array: "+ Arrays.toString(array));*/
 
         mergesort(0, array.length - 1, array, buffer); // 0 er Starten på array, ar.length -1 er index 3 i length = 4
     }
 
     private <T extends Comparable<T>> void mergesort(int low, int high, T[] array, T[] buffer) {
-        /*System.out.println();
-        System.out.println(teller);
-        teller++;*/
 
         if (low >= high) { // f.eks. [0] = index 0 low == Index 0 high. e.g 1 Element in Array
             /*
@@ -69,34 +63,15 @@ public class MergeSort implements MySort {
 
         int middle = low + (high - low) / 2;
 
-        /*System.out.println();
-        System.out.println("In MergeSort Buffer: "+ Arrays.toString(buffer));
-        System.out.println("In MergeSort Array: "+ Arrays.toString(array));
-        System.out.println("Low: "+low);
-        System.out.println("Middle: "+ middle);
-        System.out.println("High: "+high);
-        System.out.println(); */
 
-        //System.out.println("Kaller på MergeSort for Lower Half: " +  "Low: " + low + " Middle: " + middle + " Array: "+ Arrays.toString(array) +" Buffer: " + Arrays.toString(buffer));
         mergesort(low, middle, array, buffer);
 
-        //System.out.println("Kaller på MergeSort for Upper Half: " +  "Middle+1: " + (middle+1) + " high: " + high + " Array: "+ Arrays.toString(array) +" Buffer: " + Arrays.toString(buffer));
-        mergesort(middle + 1, high, array, buffer); // Middle +1 fordi middle er i den over
+        mergesort(middle + 1, high, array, buffer);
 
         merge(low, middle, high, array, buffer);
     }
 
     private <T extends Comparable<T>> void merge(int low, int middle, int high, T[] array, T[] buffer) {
-        /*System.out.println();
-        System.out.println("In Merge Array: "+ Arrays.toString(array));
-        System.out.println("In Merge Buffer: "+Arrays.toString(buffer));
-        System.out.println();
-        System.out.println("Sorting Round "+teller);
-        System.out.println("Low: "+low);
-        System.out.println("Middle: "+middle);
-        System.out.println("high: " + high);
-        teller++;*/
-
 
         for (int i = low; i <= high; i++) {
             buffer[i] = array[i];
@@ -120,10 +95,6 @@ public class MergeSort implements MySort {
             } else {
                 array[k] = buffer[i++];
             }
-
-            /*System.out.println("Result Array: "+ Arrays.toString(array));
-            System.out.println("Result Buffer"+ Arrays.toString(buffer));*/
-
         }
     }
 }
