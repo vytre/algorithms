@@ -46,9 +46,9 @@ public class MergeSort implements MySort {
             could be saved in a private field. But that would lead to exactly the
             same problem with multi-threading.
          */
-        T[] buffer = (T[]) new Comparable[array.length];
-        System.out.println("In Sort Buffer: "+ Arrays.toString(buffer));
-        System.out.println("In Sort Array: "+ Arrays.toString(array));
+        T[] buffer = (T[]) new Comparable[array.length]; // Hjelpe Array
+        /*System.out.println("In Sort Buffer: "+ Arrays.toString(buffer));
+        System.out.println("In Sort Array: "+ Arrays.toString(array));*/
 
         mergesort(0, array.length - 1, array, buffer); // 0 er Starten på array, ar.length -1 er index 3 i length = 4
     }
@@ -77,10 +77,10 @@ public class MergeSort implements MySort {
         System.out.println("High: "+high);
         System.out.println(); */
 
-        System.out.println("Kaller på MergeSort for Lower Half: " +  "Low: " + low + " Middle: " + middle + " Array: "+ Arrays.toString(array) +" Buffer: " + Arrays.toString(buffer));
+        //System.out.println("Kaller på MergeSort for Lower Half: " +  "Low: " + low + " Middle: " + middle + " Array: "+ Arrays.toString(array) +" Buffer: " + Arrays.toString(buffer));
         mergesort(low, middle, array, buffer);
 
-        System.out.println("Kaller på MergeSort for Upper Half: " +  "Middle+1: " + (middle+1) + " high: " + high + " Array: "+ Arrays.toString(array) +" Buffer: " + Arrays.toString(buffer));
+        //System.out.println("Kaller på MergeSort for Upper Half: " +  "Middle+1: " + (middle+1) + " high: " + high + " Array: "+ Arrays.toString(array) +" Buffer: " + Arrays.toString(buffer));
         mergesort(middle + 1, high, array, buffer); // Middle +1 fordi middle er i den over
 
         merge(low, middle, high, array, buffer);
@@ -89,9 +89,13 @@ public class MergeSort implements MySort {
     private <T extends Comparable<T>> void merge(int low, int middle, int high, T[] array, T[] buffer) {
         /*System.out.println();
         System.out.println("In Merge Array: "+ Arrays.toString(array));
-        System.out.println("In Merge Buffer: "+Arrays.toString(buffer));*/
+        System.out.println("In Merge Buffer: "+Arrays.toString(buffer));
         System.out.println();
+        System.out.println("Sorting Round "+teller);
+        System.out.println("Low: "+low);
+        System.out.println("Middle: "+middle);
         System.out.println("high: " + high);
+        teller++;*/
 
 
         for (int i = low; i <= high; i++) {
