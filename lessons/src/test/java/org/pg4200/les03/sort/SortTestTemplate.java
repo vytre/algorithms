@@ -185,4 +185,20 @@ public abstract class SortTestTemplate {
     the values in the array to 0 ???
     */
     }
+
+    @Test
+    public void testBase2(){
+
+        String[] array = {"d", "a", "e" ,"f" ,"c" , "g", "b"};
+
+        sorter.sort(array);
+
+        assertEquals("a", array[0]);
+        assertEquals("b", array[1]);
+        assertEquals("c", array[2]);
+        assertEquals("d", array[3]);
+        assertEquals("e", array[4]);
+        assertEquals("f", array[5]);
+        assertEquals("g", array[6]);
+    }
 }
