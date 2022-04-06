@@ -54,12 +54,12 @@ public class MyMapBinarySearchTree<K extends Comparable<K>, V> implements MyMapT
 
         int cmp = key.compareTo(subtree.key);
 
-        if (cmp < 0) {
+        if (cmp < 0) { // Hvis "Ny" key er mindre enn root key
             subtree.left = put(key, value, subtree.left);
             return subtree;
         }
 
-        if (cmp > 0) {
+        if (cmp > 0) { // Hvis "Ny" key er Større enn root key
             subtree.right = put(key, value, subtree.right);
             return subtree;
         }
