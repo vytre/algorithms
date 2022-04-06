@@ -189,7 +189,7 @@ public class MyMapBinarySearchTree<K extends Comparable<K>, V> implements MyMapT
         int cmp = key.compareTo(subtreeRoot.key);
 
         if (cmp == 0) {
-            return subtreeRoot.value;
+            return subtreeRoot.value; // Key == subtree Key
         } else if (cmp > 0) {
             //look at greater values in the right subtree
             return get(key, subtreeRoot.right);

@@ -111,22 +111,21 @@ public class MyMapBinarySearchTreeTest extends MyMapTestTemplate {
 
         map.put(5, "a");
         map.put(2, "a");
-        map.put(3, "a");
         map.put(0, "a");
         map.put(8, "a");
         map.put(6, "a");
         map.put(10, "a");
 
-        map.delete(3);
-        assertNull(map.get(3));
+        map.delete(0);
+        assertNull(map.get(0));
 
         /*
             [5]
            /   \
           /     \
         (2)      [8]
-       /   \    /   \
-    [0]    [3] [6]   [10]
+       /        /   \
+    [0]       [6]   [10]
 
 
 
@@ -195,5 +194,66 @@ public class MyMapBinarySearchTreeTest extends MyMapTestTemplate {
     /  \
        [1]
   */
+    }
+
+    @Test
+    public void testDeleteHardCase2(){
+
+        // Her skal vi slette en TreeNode som har 2 Childs
+        // I dette eksempelet sletter vi 8.
+
+        map.put(5, "a");
+        map.put(2, "a");
+        map.put(0, "a");
+        map.put(8, "a");
+        map.put(6, "a");
+        map.put(10, "a");
+
+        map.delete(5);
+        assertNull(map.get(5));
+
+
+
+  /*
+            [5]
+           /   \
+          /     \
+        (2)      [8]
+       /        /   \
+    [0]        [6]   [10]
+
+
+  */
+    }
+
+
+    @Test
+    public void testGet(){
+        map.put(5,"a");
+        map.put(2,"b");
+        map.put(6,"c");
+        map.put(8,"d");
+
+        String value = map.get(5);
+        String value2 = map.get(8);
+
+        assertEquals(value,"a");
+        assertEquals(value2,"d");
+
+
+    }
+
+    @Test
+    public void testMaxTreeDepth(){
+        map.put(5,"a");
+        map.put(2,"b");
+        map.put(6,"c");
+        map.put(8,"d");
+
+        int value = map.getMaxTreeDepth();
+
+        assertEquals(value,3);
+
+
     }
 }
