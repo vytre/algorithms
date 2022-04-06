@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
  * Created by arcuri82 on 23-Aug-17.
@@ -102,5 +103,64 @@ public class MyMapBinarySearchTreeTest extends MyMapTestTemplate {
         map.put(0, "a");
 
         assertEquals(7, map.getMaxTreeDepth());
+    }
+
+    @Test
+    public void testDeleteSimpleCase(){
+        // Sletter TreeNode med ingen Children, en Leaf E.G 3
+
+        map.put(5, "a");
+        map.put(2, "a");
+        map.put(3, "a");
+        map.put(0, "a");
+        map.put(8, "a");
+        map.put(6, "a");
+        map.put(10, "a");
+
+        map.delete(3);
+        assertNull(map.get(3));
+
+        /*
+            [5]
+           /   \
+          /     \
+        (2)      [8]
+       /   \    /   \
+    [0]    [3] [6]   [10]
+
+
+
+     */
+    }
+
+    @Test
+    public void testDeleteMediumCase(){
+
+        // Her skal vi slette en TreeNode som har en Child E.G en .left eller .Right
+        // I dette eksempelet sletter vi 0
+
+        map.put(5, "a");
+        map.put(2, "a");
+        map.put(3, "a");
+        map.put(0, "a");
+        map.put(8, "a");
+        map.put(6, "a");
+        map.put(10, "a");
+        map.put(1,"a");
+
+        map.delete(0);
+        assertNull(map.get(0));
+
+
+  /*
+            [5]
+           /   \
+          /     \
+        (2)      [8]
+       /   \    /   \
+    [0]    [3] [6]   [10]
+    /  \
+       [1]
+  */
     }
 }

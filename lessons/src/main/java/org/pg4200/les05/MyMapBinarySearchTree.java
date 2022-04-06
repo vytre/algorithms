@@ -44,7 +44,7 @@ public class MyMapBinarySearchTree<K extends Comparable<K>, V> implements MyMapT
      */
     private TreeNode put(K key, V value, TreeNode subtree) {
 
-        if (subtree == null) {
+        if (subtree == null) { // Hvis det ikke finnes en node til der vi peker
             TreeNode node = new TreeNode();
             node.key = key;
             node.value = value;
@@ -52,19 +52,19 @@ public class MyMapBinarySearchTree<K extends Comparable<K>, V> implements MyMapT
             return node;
         }
 
-        int cmp = key.compareTo(subtree.key);
+        int compare = key.compareTo(subtree.key);
 
-        if (cmp < 0) { // Hvis "Ny" key er mindre enn root key
+        if (compare < 0) { // Hvis "Ny" key er mindre enn root key
             subtree.left = put(key, value, subtree.left);
             return subtree;
         }
 
-        if (cmp > 0) { // Hvis "Ny" key er Større enn root key
+        if (compare > 0) { // Hvis "Ny" key er Større enn root key
             subtree.right = put(key, value, subtree.right);
             return subtree;
         }
 
-        assert cmp == 0;
+        assert compare == 0; // Her er key lik en key som vi allerede har, da "beholder" vi Keyen, men endrer Value
         subtree.value = value;
 
         return subtree;
@@ -93,14 +93,14 @@ public class MyMapBinarySearchTree<K extends Comparable<K>, V> implements MyMapT
             return null;
         }
 
-        int cmp = key.compareTo(subtreeRoot.key);
+        int compare = key.compareTo(subtreeRoot.key);
 
-        if (cmp < 0) {
+        if (compare < 0) {
             subtreeRoot.left = delete(key, subtreeRoot.left);
             return subtreeRoot;
         }
 
-        if (cmp > 0) {
+        if (compare > 0) {
             subtreeRoot.right = delete(key, subtreeRoot.right);
             return subtreeRoot;
         }
@@ -110,7 +110,7 @@ public class MyMapBinarySearchTree<K extends Comparable<K>, V> implements MyMapT
             How to delete this node will depend on
             how many children it has
          */
-        assert cmp == 0;
+        assert compare == 0;
 
         size--;
 
