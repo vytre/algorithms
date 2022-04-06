@@ -95,12 +95,12 @@ public class MyMapBinarySearchTree<K extends Comparable<K>, V> implements MyMapT
 
         int compare = key.compareTo(subtreeRoot.key);
 
-        if (compare < 0) {
+        if (compare < 0) { // Keyen vi prøver å slette er mindre en subtree key, vå går mot venstre
             subtreeRoot.left = delete(key, subtreeRoot.left);
             return subtreeRoot;
         }
 
-        if (compare > 0) {
+        if (compare > 0) { // Keyen vi prøver å slette er Større en subtree key, vi går mot høyre
             subtreeRoot.right = delete(key, subtreeRoot.right);
             return subtreeRoot;
         }
@@ -110,7 +110,7 @@ public class MyMapBinarySearchTree<K extends Comparable<K>, V> implements MyMapT
             How to delete this node will depend on
             how many children it has
          */
-        assert compare == 0;
+        assert compare == 0; // Vi ha kommet fram til den keyen vi prøver å slette
 
         size--;
 
@@ -133,8 +133,11 @@ public class MyMapBinarySearchTree<K extends Comparable<K>, V> implements MyMapT
          */
 
         if (subtreeRoot.left == null) {
-            return subtreeRoot.right;
+            return subtreeRoot.right; // Siden en leaf ikke har noen Children er .right og .left null, her returnerer vi basicly null
         }
+
+        // Hvis vi sletter en subTreeNode med en child, så setter vi bare subtreeNodens .Left eller .Right (Ettersom vi er på venstre eller høyre side)
+        // til å være noden over til å "eie" den gamle sin .left eller .Right (Se skrivebok)
 
         if (subtreeRoot.right == null) {
             return subtreeRoot.left;

@@ -163,4 +163,37 @@ public class MyMapBinarySearchTreeTest extends MyMapTestTemplate {
        [1]
   */
     }
+
+
+    @Test
+    public void testDeleteHardCase(){
+
+        // Her skal vi slette en TreeNode som har 2 Childs
+        // I dette eksempelet sletter vi 8.
+
+        map.put(5, "a");
+        map.put(2, "a");
+        map.put(3, "a");
+        map.put(0, "a");
+        map.put(8, "a");
+        map.put(6, "a");
+        map.put(10, "a");
+        map.put(1,"a");
+
+        map.delete(8);
+        assertNull(map.get(8));
+
+
+
+  /*
+            [5]
+           /   \
+          /     \
+        (2)      [8]
+       /   \    /   \
+    [0]    [3] [6]   [10]
+    /  \
+       [1]
+  */
+    }
 }
