@@ -256,4 +256,34 @@ public class MyMapBinarySearchTreeTest extends MyMapTestTemplate {
 
 
     }
+
+    /**
+     * When a node with two children needs to be deleted,
+     * instead of replacing it with the min value from the right-subtree,
+     * do use the max value from the left-subtree.*/
+    @Test
+    public void testForExerciseAEasy(){
+
+        map.put(5,"a");
+        map.put(4,"a");
+        map.put(1,"a");
+        map.put(8,"a");
+        map.put(6,"a");
+        map.put(15,"a");
+
+        map.delete(5);
+
+
+
+
+  /*
+             [5]
+           /     \
+          /       \
+       (4)        [8]
+       /         /   \
+     [1]       [6]   [15]
+
+  */
+    }
 }
