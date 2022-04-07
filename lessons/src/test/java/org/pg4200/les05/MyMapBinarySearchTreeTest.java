@@ -280,9 +280,9 @@ public class MyMapBinarySearchTreeTest extends MyMapTestTemplate {
              [5]
            /     \
           /       \
-       (4)        [8]
-       /         /   \
-     [1]       [6]   [15]
+       (3)        [8]
+       /  \       /   \
+     [1]   4    [6]   [15]
 
   */
     }

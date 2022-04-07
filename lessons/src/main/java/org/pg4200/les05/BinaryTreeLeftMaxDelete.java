@@ -88,11 +88,11 @@ public class BinaryTreeLeftMaxDelete<K extends Comparable<K>, V> extends MyMapBi
 
     private TreeNode deleteMax(TreeNode subtreeRoot) {
 
-        if (subtreeRoot.left == null) {
-            return subtreeRoot.right;
+        if (subtreeRoot.right == null) {
+            return subtreeRoot.left;
         }
 
-        subtreeRoot.left = deleteMax(subtreeRoot.left);
+        subtreeRoot.right = deleteMax(subtreeRoot.right);
 
         return subtreeRoot;
     }
