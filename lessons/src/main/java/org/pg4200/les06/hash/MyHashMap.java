@@ -5,7 +5,7 @@ package org.pg4200.les06.hash;
  * Why?
  * Because for hash maps there is no constrains that
  * the keys must be sortable.
- * Here we just need to have an hashcode, and all
+ * Here we just need to have a hashcode, and all
  * objects in Java have the method "hashCode()", as
  * inherited from java.lang.Object
  *
