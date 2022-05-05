@@ -17,7 +17,7 @@ public class AllPathsGraph<V> extends UndirectedGraph<V> {
             throw new IllegalArgumentException();
         }
 
-        Stack<V> stack = new Stack<V>();
+        Stack<V> stack = new Stack<>();
         List<List<V>> paths = new ArrayList<>();
 
         findAllPathsDF(stack, paths, start, end);
