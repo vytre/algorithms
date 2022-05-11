@@ -20,6 +20,7 @@ public abstract class RegexTestTemplate {
         rubricB(rub);
     }
 
+
     public void exerciseA(String regex){
         assertFalse("".matches(regex));
         assertFalse("Exercise no5:\nFile: Ex05.txt".matches(regex));
