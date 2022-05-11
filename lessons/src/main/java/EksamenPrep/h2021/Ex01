@@ -1,0 +1,13 @@
+
+    Explanation: The files starts with pg4200_ then comes 5 numbers each ranging from 0-9 then it ends with zip
+
+    public String RegexA(){
+        return "pg4200_[0-9]{5}.zip";
+    }
+
+
+
+   Explanation: Starts with many or no chars, then either algdat|algorithms|pg4200 then many or no chars and ending with either !,? or .
+   public String RegexB(){
+       return "(.)*"+"(algdat|algorithms|pg4200)"+ "(.)*" +"[\\!\\?\\.]";
+   }
