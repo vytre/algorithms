@@ -19,7 +19,6 @@ public class Ex02 {
         }
 
         protected Node root;
-
         protected int size;
 
 
