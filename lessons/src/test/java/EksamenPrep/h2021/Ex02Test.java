@@ -45,6 +45,13 @@ class Ex02Test extends MyMapTestTemplate {
 
     @Test
     public void vegardTest(){
+        Ex02.StudentMap<Integer,String> studentMap = new Ex02.StudentMap<>();
+
+        studentMap.put(3,"Vegard");
+
+        assertEquals(1,studentMap.size());
+
+        System.out.println(studentMap.myMap[3].get(3));
 
     }
 }
