@@ -3,6 +3,7 @@ package eksamenPrep.h2021;
 import org.pg4200.les05.MyMap;
 import org.pg4200.les05.MyMapBinarySearchTree;
 
+import java.util.Locale;
 import java.util.Objects;
 
 public class Ex02 {
@@ -17,6 +18,7 @@ public class Ex02 {
                 myMap[i] = new StudentTree<>();
             }
         }
+        
 
 
         @Override
@@ -49,7 +51,7 @@ public class Ex02 {
         @Override
         public int size() {
             int mySize = 0;
-            for (StudentTree tree:
+            for (StudentTree<K,V> tree:
                  myMap) {
                 mySize+= tree.size;
             }
