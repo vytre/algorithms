@@ -54,4 +54,24 @@ class Ex02Test extends MyMapTestTemplate {
         System.out.println(studentMap.myMap[3].get(3));
 
     }
+
+    @Test
+    public void vegardTest2(){
+        Ex02.StudentMap<Integer,String> studentMap = new Ex02.StudentMap<>();
+        studentMap.put(0,"Marius");
+        studentMap.put(1,"Marius");
+        studentMap.put(2,"Sander");
+        studentMap.put(3,"Sander");
+        studentMap.put(4,"Sander");
+        studentMap.put(5,"Sander");
+        studentMap.put(6,"Sander");
+        studentMap.put(7,"Sander");
+        //studentMap.getByName("vegard");
+
+        System.out.println(studentMap.myMap[0].get(0));
+
+
+        //System.out.println(studentMap.myMap[1]);
+
+    }
 }

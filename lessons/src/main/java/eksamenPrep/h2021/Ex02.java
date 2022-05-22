@@ -18,6 +18,21 @@ public class Ex02 {
                 myMap[i] = new StudentTree<>();
             }
         }
+
+        /*public String getByName(String search_name){
+            for (int i = 0; i < myMap.length; i++) {
+               int myMapDepth = myMap[i].size;
+
+               for (int j = 0; j < myMapDepth; j++) {
+                    if (myMap[i].get(j).equals(search_name)){
+                        System.out.println("Found " + search_name + "at Tree Nr: " + i);
+                        return search_name;
+                    }
+                }
+            }
+            return null;
+        }*/
+
         
 
 
