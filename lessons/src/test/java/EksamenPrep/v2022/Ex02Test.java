@@ -10,7 +10,12 @@ class Ex02Test {
 
     @Test
     public void vegardTest(){
-        Ex02.InitiativeHandler handler = new Ex02.InitiativeHandler();
+        Ex02.InitiativeHandler<Integer,String> handler = new Ex02.InitiativeHandler<>();
+
+        Ex02.InitiativeHandler.Character character = new Ex02.InitiativeHandler.Character();
+
+        System.out.println(character.rollInitiative());
+
 
     }
 

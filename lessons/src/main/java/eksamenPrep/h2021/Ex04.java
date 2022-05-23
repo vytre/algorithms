@@ -37,10 +37,10 @@ public class Ex04 {
 
     public Double pipe(List<Student> students,String courseId){
         return students.stream()
-                .flatMap(student -> student.getExamPoints().entrySet().stream())
-                .filter(stringDoubleEntry -> courseId.equals(stringDoubleEntry.getKey()))
-                .map(Map.Entry::getValue)
-                .collect(Collectors.averagingDouble(value -> value));
+                .flatMap(student -> student.getExamPoints().entrySet().stream()) // La meg manipulate enten Key eller Value
+                .filter(stringDoubleEntry -> courseId.equals(stringDoubleEntry.getKey()))// Sjekker om Key er lik Course, kan også skrive getValue
+                .map(Map.Entry::getValue) // Henter verdier
+                .collect(Collectors.averagingDouble(value -> value)); // Regner ut average kun på de som = courseId
     }
 
 

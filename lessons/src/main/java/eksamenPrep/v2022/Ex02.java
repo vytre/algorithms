@@ -9,18 +9,18 @@ public class Ex02 {
     public static class InitiativeHandler<K extends Comparable<K>,V> implements InitiativeTemplate, MyMap<K,V> {
 
 
-
-        myTree<K,V> slowTree = new myTree<>();
-        myTree<K,V> mediumTree = new myTree<>();
-        myTree<K,V> fastTree = new myTree<>();
+        public myTree<K,V> fastTree = new myTree<>();
+        public myTree<K,V> mediumTree = new myTree<>();
+        public myTree<K,V> slowTree = new myTree<>();
 
         // Interface Methods
         @Override
         public void addCharacter(Character character) {
             Initiative initiativeRating = character.initiativeRating;
+
+
             switch (initiativeRating){
                 case FAST:
-                    
                     break;
                 case MEDIUM:
                     break;
@@ -46,7 +46,8 @@ public class Ex02 {
         // MyMap Methods
         @Override
         public void put(K key, V value) {
-
+            String keyString = key.toString();
+            int keyInteger = Integer.parseInt(keyString);
         }
 
         @Override
