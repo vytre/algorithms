@@ -1,6 +1,7 @@
-package EksamenPrep.h2021;
+package EksamenPrep.v2022;
 
-import eksamenPrep.h2021.Ex01;
+
+import eksamenPrep.v2022.Ex01;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,7 +14,7 @@ class Ex01Test {
         // En måte å gjøre det på, safe måte
         Ex01 ex01 = new Ex01();
 
-        String myString = ex01.RegexA();
+        String myString = ex01.regExA();
 
         assertFalse("".matches(myString));
         assertFalse("Exercise no5:\nFile: Ex05.txt".matches(myString));
@@ -34,7 +35,7 @@ class Ex01Test {
     @Test
     public void testTaskB(){
         Ex01 ex01 = new Ex01();
-        String myString = ex01.RegexB();
+        String myString = ex01.regExB();
 
         assertFalse("".matches(myString));
         assertFalse("@Sven: Why do we need the exercises?".matches(myString));

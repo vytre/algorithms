@@ -10,7 +10,8 @@ class Ex01Test {
     @Test
     public void test1(){
         Ex01 ex01 = new Ex01();
-        assertEquals("is this an out of season april fools joke",ex01.regEx());
+        String myString = ex01.regEx();
+        assertTrue("is this an out of season april fools joke".matches(myString));
     }
 
     @Test

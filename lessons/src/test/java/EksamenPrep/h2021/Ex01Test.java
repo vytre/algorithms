@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class Vegard {
+class Ex01Test {
     Ex01 ex01 = new Ex01();
 
     @Test
