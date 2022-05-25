@@ -7,7 +7,7 @@ public class Ex01 {
 
     public String regExB(){
         return "@Bogdan: " + // Bogdan:
-                ".*" + // Something or nothin
+                ".*" + // Something or nothing
                 "[?]"; // Ends with ?
     }
 }
