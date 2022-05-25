@@ -1,47 +1,49 @@
-package EksamenPrep.v2022;
+package EksamenPrep.h2021;
 
-import eksamenPrep.v2022.Ex01;
+import eksamenPrep.h2021.Ex01;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class Ex01Test {
 
+
     @Test
-    public void TestTask1(){
+    public void testTaskA(){
+        // En måte å gjøre det på, safe måte
         Ex01 ex01 = new Ex01();
 
-    String stringTaskA = ex01.regExA();
+        String myString = ex01.RegexA();
 
-        assertFalse("".matches(stringTaskA));
-        assertFalse("pg4201_00000.zip".matches(stringTaskA));
-        assertFalse("pg4200_ab000.zip".matches(stringTaskA));
-        assertFalse("pg4200_00000.rar".matches(stringTaskA));
-        assertFalse("pg4200_00000zip".matches(stringTaskA));
-        assertFalse("pg4200_123456.zip".matches(stringTaskA));
+        assertFalse("".matches(myString));
+        assertFalse("Exercise no5:\nFile: Ex05.txt".matches(myString));
+        assertFalse("Exercise 5: File: Ex05.txt".matches(myString));
+        assertFalse("Exercise 5:\nFile: Ex05.pdf".matches(myString));
+        assertFalse("Exercise 5:\nFile: Ex05".matches(myString));
+        assertFalse("Exercise 5:\nFile: Ex_something05.txt".matches(myString));
+        assertFalse("Blorpblo 5:\nHunh: Ex05.java".matches(myString));
 
+        assertTrue("Exercise 5:\nFile: Ex5.java".matches(myString));
+        assertTrue("Exercise 5:\nFile: Ex05.txt".matches(myString));
+        assertTrue("Exercise 3:\nFile: Ex03.java".matches(myString));
+        assertTrue("Exercise 13:\nFile: Ex13.java".matches(myString));
+        assertTrue("Exercise 42:\nFile: Ex42.txt".matches(myString));
 
-        assertTrue("pg4200_00000.zip".matches(stringTaskA));
-        assertTrue("pg4200_12345.zip".matches(stringTaskA));
     }
-
 
     @Test
-    public void TestTask2(){
-        Ex01 task2 = new Ex01();
+    public void testTaskB(){
+        Ex01 ex01 = new Ex01();
+        String myString = ex01.RegexB();
 
-        String stringTaskB = task2.regExB();
+        assertFalse("".matches(myString));
+        assertFalse("@Sven: Why do we need the exercises?".matches(myString));
+        assertFalse("@Bogdan: Exercises will be useful in understanding the topic better.".matches(myString));
+        assertFalse("@Bogdan - advises that you do all the exercises".matches(myString));
+        assertFalse("@Sven: Have you asked @Bogdan about this?".matches(myString));
 
-
-        assertFalse("".matches(stringTaskB));
-        assertFalse("@Sven: Why do we need the exercises?".matches(stringTaskB));
-        assertFalse("@Bogdan: Exercises will be useful in understanding the topic better.".matches(stringTaskB));
-        assertFalse("@Bogdan - advises that you do all the exercises".matches(stringTaskB));
-        assertFalse("@Sven: Have you asked @Bogdan about this?".matches(stringTaskB));
-
-        assertTrue("@Bogdan: Has everyone completed all algdat exercises??".matches(stringTaskB));
-        assertTrue("@Bogdan: Are there any additional algorithms questions!".matches(stringTaskB));
-        assertTrue("@Bogdan: Where can I find the solutions for this pg4200 exercise.".matches(stringTaskB));
+        assertTrue("@Bogdan: Has everyone completed all exercises?".matches(myString));
+        assertTrue("@Bogdan: Are there any additional questions?".matches(myString));
+        assertTrue("@Bogdan: Where can I find the solutions for this exercise?".matches(myString));
     }
-
 }
