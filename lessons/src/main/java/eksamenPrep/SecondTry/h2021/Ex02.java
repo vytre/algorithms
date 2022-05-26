@@ -4,6 +4,7 @@ package eksamenPrep.SecondTry.h2021;
 import org.pg4200.les05.MyMap;
 import org.pg4200.les05.MyMapBinarySearchTree;
 
+import java.beans.PropertyEditorSupport;
 import java.util.Objects;
 
 public class Ex02 {
@@ -21,13 +22,15 @@ public class Ex02 {
         }
 
 
+
         @Override
         public void put(K key, V value) {
             String myString = key.toString();
             int myInt = Integer.parseInt(myString);
+            int myFirstInt = Integer.parseInt(Integer.toString(myInt).substring(0,1));
 
 
-            myTree[myInt].put(key,value);
+            myTree[myFirstInt].put(key,value);
         }
 
 
@@ -47,7 +50,12 @@ public class Ex02 {
 
         @Override
         public int size() {
-            return 22;
+            int size = 0;
+            for (MyTree<K,V> s:
+                 myTree) {
+                size+= s.size;
+            }
+            return size;
         }
 
 
@@ -62,6 +70,8 @@ public class Ex02 {
             }
             protected Node root;
             protected int size;
+
+
 
             public void put(K key, V value) {
                 Objects.requireNonNull(key);

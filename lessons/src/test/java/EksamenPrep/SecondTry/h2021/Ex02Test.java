@@ -14,16 +14,16 @@ class Ex02Test {
         Ex02.StudentMap<Integer,String> myMap = new Ex02.StudentMap<>();
 
 
-        myMap.put(2,"neg");
-        myMap.put(3,"neg");
-        myMap.put(4,"vegard123");
-        myMap.put(5,"neg");
+
+
+        myMap.put(1,"Vegard");
+        myMap.put(2,"Marius");
+        myMap.put(3,"Sander");
+        myMap.put(43321,"Fredrik");
 
         assertEquals(4,myMap.size());
-        String s = myMap.get(4);
-        assertTrue(s.matches("vegard123"));
-
-
+        String s = myMap.get(3);
+        assertTrue(s.matches("Sander"));
 
     }
 
