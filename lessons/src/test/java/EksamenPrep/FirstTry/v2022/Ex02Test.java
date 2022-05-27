@@ -1,4 +1,4 @@
-package EksamenPrep.v2022;
+package EksamenPrep.FirstTry.v2022;
 
 import eksamenPrep.FirstTry.v2022.Ex02;
 import org.junit.jupiter.api.Test;

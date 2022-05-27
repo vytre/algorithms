@@ -1,4 +1,4 @@
-package EksamenPrep.v2022;
+package EksamenPrep.FirstTry.v2022;
 
 import static org.junit.jupiter.api.Assertions.*;
 

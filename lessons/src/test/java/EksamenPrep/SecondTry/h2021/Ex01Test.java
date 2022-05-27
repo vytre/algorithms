@@ -1,4 +1,4 @@
-package EksamenPrep.SecondTry;
+package EksamenPrep.SecondTry.h2021;
 
 import eksamenPrep.SecondTry.h2021.Ex01;
 import org.junit.jupiter.api.Test;
