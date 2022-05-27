@@ -1,4 +1,4 @@
-package eksamenPrep.v2022;
+package eksamenPrep.FirstTry.v2022;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

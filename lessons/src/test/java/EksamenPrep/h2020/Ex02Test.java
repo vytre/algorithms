@@ -1,9 +1,7 @@
 package EksamenPrep.h2020;
 
-import eksamenPrep.h2020.Ex02;
+import eksamenPrep.FirstTry.h2020.Ex02;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class Ex02Test {
 

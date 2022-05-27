@@ -1,4 +1,4 @@
-package eksamenPrep.h2021;
+package eksamenPrep.FirstTry.h2021;
 
 public class Ex01 {
     public String RegexA(){

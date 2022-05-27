@@ -1,6 +1,5 @@
 package EksamenPrep.h2021;
-import eksamenPrep.h2021.Ex04;
-import org.junit.jupiter.api.Assertions;
+import eksamenPrep.FirstTry.h2021.Ex04;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

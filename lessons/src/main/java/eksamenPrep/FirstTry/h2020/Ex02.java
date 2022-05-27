@@ -1,4 +1,4 @@
-package eksamenPrep.h2020;
+package eksamenPrep.FirstTry.h2020;
 
 import org.pg4200.les02.list.MyList;
 

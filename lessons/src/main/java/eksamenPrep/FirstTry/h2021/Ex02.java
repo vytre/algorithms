@@ -1,109 +1,91 @@
-package eksamenPrep.v2022;
+package eksamenPrep.FirstTry.h2021;
 
 import org.pg4200.les05.MyMap;
+import org.pg4200.les05.MyMapBinarySearchTree;
 
-import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Objects;
 
 public class Ex02 {
-    public static class InitiativeHandler<K extends Comparable<K>,V> implements InitiativeTemplate, MyMap<K,V> {
+    public static class StudentMap<K extends Comparable<K>, V> implements MyMap<K, V> {
 
+        // Her starter Oppgaven basicly
 
-        public myTree<K,V> fastTree = new myTree<>();
-        public myTree<K,V> mediumTree = new myTree<>();
-        public myTree<K,V> slowTree = new myTree<>();
+        public StudentTree<K, V>[] myMap = new StudentTree[10];
 
-        // Interface Methods
-        @Override
-        public void addCharacter(Character character) {
-            Initiative initiativeRating = character.initiativeRating;
-
-
-            switch (initiativeRating){
-                case FAST:
-                    break;
-                case MEDIUM:
-                    break;
-                case SLOW:
-                    break;
-                default:
-                    System.out.println("Rating not found");
-                    break;
+        public StudentMap() {
+            for (int i = 0; i < 10; i++) {
+                myMap[i] = new StudentTree<>();
             }
         }
 
-        @Override
-        public boolean removeCharacter(int characterInitiative) {
-            return false;
-        }
+        /*public String getByName(String search_name){
+            for (int i = 0; i < myMap.length; i++) {
+               int myMapDepth = myMap[i].size;
 
-        @Override
-        public ArrayList<Character> getInitiativeOrder() {
+               for (int j = 0; j < myMapDepth; j++) {
+                    if (myMap[i].get(j).equals(search_name)){
+                        System.out.println("Found " + search_name + "at Tree Nr: " + i);
+                        return search_name;
+                    }
+                }
+            }
             return null;
-        }
+        }*/
+
+        
 
 
-        // MyMap Methods
         @Override
         public void put(K key, V value) {
             String keyString = key.toString();
             int keyInteger = Integer.parseInt(keyString);
+
+            myMap[keyInteger].put(key,value);
         }
+
 
         @Override
         public void delete(K key) {
+            String keyString = key.toString();
+            int keyInteger = Integer.parseInt(keyString);
 
+            myMap[keyInteger].delete(key);
         }
+
 
         @Override
         public V get(K key) {
-            return null;
+            String keyString = key.toString();
+            int keyInteger = Integer.parseInt(keyString);
+
+            return myMap[keyInteger].get(key);
         }
+
 
         @Override
         public int size() {
-            return 0;
-        }
-
-
-        // Character Class
-        public static class Character {
-            private Initiative initiativeRating;
-            private int id;
-            private int initiativeRoll;
-
-            public int getInitiativeRoll() {
-                return initiativeRoll;
+            int mySize = 0;
+            for (StudentTree<K,V> tree:
+                 myMap) {
+                mySize+= tree.size;
             }
-
-            public int rollInitiative() {
-                int roll = (int) Math.floor(Math.random() * 20 + 1);
-                initiativeRoll = roll * 10000 + id;
-                return initiativeRoll;
-            }
-
+            return mySize;
         }
 
+        public static class StudentTree<K extends Comparable<K>, V> {
 
-        // Enum
-        enum Initiative {
-            FAST, MEDIUM, SLOW
-        }
-
-
-        // Binary Tree
-
-        public static class myTree<K extends Comparable<K>, V> {
             protected class Node {
                 public K key;
                 public V value;
 
-                public Node right;
                 public Node left;
+                public Node right;
             }
 
-            private Node root;
+            protected Node root;
             protected int size;
+
 
             public void put(K key, V value) {
                 Objects.requireNonNull(key);
@@ -226,6 +208,7 @@ public class Ex02 {
                     //look at smaller values in the left subtree
                     return get(key, root.left);
                 }
+
                 return null;
             }
         }
