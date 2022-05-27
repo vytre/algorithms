@@ -24,7 +24,7 @@ class Ex01Test {
         assertFalse("Exercise 5:\nFile: Ex_something05.txt".matches(myString));
         assertFalse("Blorpblo 5:\nHunh: Ex05.java".matches(myString));
 
-        assertTrue("Exercise 5:\nFile: Ex5.java".matches(myString));
+        assertTrue("Exercise 5:\nFile: Ex05.java".matches(myString));
         assertTrue("Exercise 5:\nFile: Ex05.txt".matches(myString));
         assertTrue("Exercise 3:\nFile: Ex03.java".matches(myString));
         assertTrue("Exercise 13:\nFile: Ex13.java".matches(myString));
