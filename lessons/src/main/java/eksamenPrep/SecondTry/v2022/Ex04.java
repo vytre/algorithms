@@ -11,7 +11,12 @@ public class Ex04 {
     public ArrayList<String> pipe1(List<DiplomaProject> project,String courseId){
         return project.stream()
                 .flatMap(diplomaProject -> diplomaProject.getAuthors().stream())
-                .filter(student -> student.getCourseList().entrySet().stream())
+                .filter(student -> student.getCourseList().entrySet().stream()
+                        .anyMatch(courseIntegerEntry -> courseIntegerEntry.getKey().courseId.equals(courseId)
+                        && courseIntegerEntry.getValue()>=2))
+                .map(student -> student.diplomaProject.title)
+                .distinct()
+                .collect(Collectors.toCollection(ArrayList::new));
 
 
 
