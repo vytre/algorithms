@@ -24,7 +24,7 @@ class Ex01sTest {
     @Test
     public void test2(){
         Ex01s ex01s = new Ex01s();
-        String myString = ex01s.regexB();
+        String myString = ex01s.regexA();
         String stringToMach = "Is this an out of season april fools joke?";
 
 
@@ -43,6 +43,11 @@ class Ex01sTest {
     @Test
     public void test3(){
        Ex01s ex01s = new Ex01s();
+       String myString = ex01s.regexC();
+
+
+       assertTrue("is This an out of season april fools joke?".matches(myString));
+
     }
 
 
