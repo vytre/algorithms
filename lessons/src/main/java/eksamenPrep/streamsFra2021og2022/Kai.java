@@ -29,7 +29,10 @@ public class Kai {
         ArrayList<Course> courses;
     }
 
-    public List<String> pipe1(List<Teacher> teachers){
+    public List<String> pipe1(List<Teacher> teachers) {
         return teachers.stream()
-                .filter(teacher -> teacher.name == null)
+                .filter(teacher -> teacher.name != null)
+                .map(teacher -> teacher.name)
+                .collect(Collectors.toList());
+    }
 }
