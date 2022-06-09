@@ -14,14 +14,6 @@ public class Ex04 {
                 .map(student -> student.diplomaProject.title)
                 .distinct()
                 .collect(Collectors.toCollection(ArrayList::new));
-
-
-
-
-
-
-
-
     }
 
     public static class DiplomaProject{
