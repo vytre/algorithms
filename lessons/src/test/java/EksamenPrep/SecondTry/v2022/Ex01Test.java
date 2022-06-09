@@ -1,6 +1,6 @@
 package EksamenPrep.SecondTry.v2022;
 
-import eksamenPrep.SecondTry.v2022.Ex01;
+import eksamenPrep.secondTry.v2022.Ex01;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -35,7 +35,7 @@ class Ex01Test {
     }
     @Test
     public void TestTask2(){
-        eksamenPrep.FirstTry.h2021.Ex01 task2 = new eksamenPrep.FirstTry.h2021.Ex01();
+        eksamenPrep.firsTry.h2021.Ex01 task2 = new eksamenPrep.firsTry.h2021.Ex01();
 
         String stringTaskB = task2.RegexB();
 

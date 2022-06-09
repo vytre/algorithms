@@ -1,6 +1,6 @@
 package EksamenPrep.FirstTry.h2020;
 
-import eksamenPrep.FirstTry.h2020.Ex02;
+import eksamenPrep.firsTry.h2020.Ex02;
 import org.junit.jupiter.api.Test;
 
 class Ex02Test {

@@ -1,4 +1,4 @@
-package eksamenPrep.SecondTry.h2020;
+package eksamenPrep.secondTry.h2020;
 
 public class Ex01 {
 

@@ -1,6 +1,6 @@
 package EksamenPrep.FirstTry.h2021;
 
-import eksamenPrep.FirstTry.h2021.Ex02;
+import eksamenPrep.firsTry.h2021.Ex02;
 import org.junit.jupiter.api.Test;
 import org.pg4200.les05.MyMap;
 import org.pg4200.les05.MyMapTestTemplate;

@@ -1,5 +1,5 @@
 package EksamenPrep.FirstTry.h2021;
-import eksamenPrep.FirstTry.h2021.Ex04;
+import eksamenPrep.firsTry.h2021.Ex04;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

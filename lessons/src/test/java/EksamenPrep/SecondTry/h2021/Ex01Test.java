@@ -1,6 +1,6 @@
 package EksamenPrep.SecondTry.h2021;
 
-import eksamenPrep.SecondTry.h2021.Ex01;
+import eksamenPrep.secondTry.h2021.Ex01;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

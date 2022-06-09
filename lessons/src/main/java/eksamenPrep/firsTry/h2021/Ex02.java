@@ -1,9 +1,7 @@
-package eksamenPrep.FirstTry.h2021;
+package eksamenPrep.firsTry.h2021;
 
 import org.pg4200.les05.MyMap;
-import org.pg4200.les05.MyMapBinarySearchTree;
 
-import java.util.Locale;
 import java.util.Objects;
 
 public class Ex02 {

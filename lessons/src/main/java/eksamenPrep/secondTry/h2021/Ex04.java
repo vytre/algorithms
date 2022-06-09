@@ -1,4 +1,4 @@
-package eksamenPrep.SecondTry.h2021;
+package eksamenPrep.secondTry.h2021;
 
 import java.util.List;
 import java.util.Map;

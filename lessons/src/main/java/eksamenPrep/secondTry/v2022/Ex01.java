@@ -1,4 +1,4 @@
-package eksamenPrep.SecondTry.v2022;
+package eksamenPrep.secondTry.v2022;
 
 public class Ex01 {
 

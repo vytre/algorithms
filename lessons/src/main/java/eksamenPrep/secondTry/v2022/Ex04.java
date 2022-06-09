@@ -1,6 +1,5 @@
-package eksamenPrep.SecondTry.v2022;
+package eksamenPrep.secondTry.v2022;
 
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 

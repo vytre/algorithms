@@ -1,4 +1,4 @@
-package eksamenPrep.FirstTry.v2022;
+package eksamenPrep.firsTry.v2022;
 
 import org.pg4200.les05.MyMap;
 

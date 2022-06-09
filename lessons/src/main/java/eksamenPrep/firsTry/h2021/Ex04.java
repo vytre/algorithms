@@ -1,4 +1,4 @@
-package eksamenPrep.FirstTry.h2021;
+package eksamenPrep.firsTry.h2021;
 
 import java.util.*;
 import java.util.stream.Collectors;

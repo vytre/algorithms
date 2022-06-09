@@ -1,10 +1,8 @@
-package eksamenPrep.SecondTry.h2021;
+package eksamenPrep.secondTry.h2021;
 
 
 import org.pg4200.les05.MyMap;
-import org.pg4200.les05.MyMapBinarySearchTree;
 
-import java.beans.PropertyEditorSupport;
 import java.util.Objects;
 
 public class Ex02 {

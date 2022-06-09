@@ -1,9 +1,7 @@
 package EksamenPrep.SecondTry.v2022;
 
-import eksamenPrep.SecondTry.v2022.Ex02;
+import eksamenPrep.secondTry.v2022.Ex02;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class Ex02Test {
 

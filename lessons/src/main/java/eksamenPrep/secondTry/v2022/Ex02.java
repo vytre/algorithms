@@ -1,4 +1,4 @@
-package eksamenPrep.SecondTry.v2022;
+package eksamenPrep.secondTry.v2022;
 
 import java.util.ArrayList;
 import java.util.Objects;
