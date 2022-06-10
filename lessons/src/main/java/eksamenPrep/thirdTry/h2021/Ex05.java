@@ -1,6 +1,7 @@
 package eksamenPrep.thirdTry.h2021;
 
 import org.pg4200.les02.generic.GenericExample;
+import org.pg4200.les11.BitReader;
 import org.pg4200.les11.BitWriter;
 
 public class Ex05 {
@@ -16,7 +17,7 @@ public class Ex05 {
                 if (c >= '0' && c<='9'){ // Vi sjekker om c er mellom 0-9, kan være vi er på trekk 23, da vil vo gå innom her 2 ganger
                     chessMove += c;
                 }
-                else if(c>='A' && c <= 'z'){
+                else if(c>='A' && c <= 'z'){ // Neste char er bokstav, altså "Brikke Type", men vi må først ta oss av trekkNr... -->
                     // 1. BitWriter tar vi TrekkNr, gjør det om til int og skriver det på 9 bits.
                     bitWriter.write(Integer.parseInt(chessMove),9); // Skriver Move til bit e.g 1 til bits (1)pe2e4
                     moves = "";
@@ -55,8 +56,35 @@ public class Ex05 {
         }
 
 
-        public byte[] deCompress (String move){
+        public String deCompress (byte[] data){
 
+            BitReader reader = new BitReader(data);
+            String result = "";
+            int entries = (data.length * 8) / 30;
+
+            for (int i = 0; i < entries; i++) {
+
+                // TrekkNr
+                result += reader.readInt(9);
+
+                // Brikke
+                result += (char)('A' + reader.readInt(8));
+
+                // Origin
+                result += (char)('a' + reader.readInt(3)); // Origin Bokstav
+                result += (reader.readInt(3)+ 1); // Origin Bokstav
+
+                // Destinasjon
+                result += (char)('a' + reader.readInt(3)); // Destinasjon Bokstav
+                result += (reader.readInt(3) + 1); // Destinasjon Nr
+
+                //check
+                boolean check = reader.readBoolean();
+                if (check){
+                    result += "!";
+                }
+            }
+            return result;
         }
     }
 }
