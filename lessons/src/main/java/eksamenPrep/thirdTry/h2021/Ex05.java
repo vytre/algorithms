@@ -17,7 +17,7 @@ public class Ex05 {
                     chessMove += c;
                 }
                 else if(c>='A' && c <= 'z'){
-                    // 1. BitWriter tar vi trekk nr, gjør det om til int og skriver det på 9 bits.
+                    // 1. BitWriter tar vi TrekkNr, gjør det om til int og skriver det på 9 bits.
                     bitWriter.write(Integer.parseInt(chessMove),9); // Skriver Move til bit e.g 1 til bits (1)pe2e4
                     moves = "";
 
@@ -29,35 +29,33 @@ public class Ex05 {
                     bitWriter.write(moves.charAt(i+1) - 'a' ,3); // Nå er vi på i+1 som er 1+1 som er char nr 3 1p(e)2e4
                     bitWriter.write(moves.charAt(i+2) - 1,3); // Nå er vi på i+2 som er 1+2 som er char nr 4 1pe(2)e4
 
-                    // Grunnen til at det er 3 bits er fordi 2 bits gir oss 4 forskjellige tall, 3 gir oss 8
+                    // Grunnen til at det er 3 bits er fordi 2 bits gir oss 4 forskjellige tall, 3 gir oss 8 (Brettet går fra 1-8)
 
 
-                    // 4.
-                    bitWriter.write(moves.charAt(i+3)-'a',3);
-                    bitWriter.write(moves.charAt(i+4)-1,3);
+                    // 4. Den første BitWriter tar for seg Destinasjon bokstav og den andre Destinasjon nummer
+                    bitWriter.write(moves.charAt(i+3)-'a',3); //1pe2(e)4
+                    bitWriter.write(moves.charAt(i+4)-1,3); //1pe2e(4)
                     i +=4;
 
-                    if (){
-
+                    if (i+1 == moves.length()){
+                        bitWriter.write(0,1);
                     }
-
+                    else {
+                        char ch = moves.charAt(i+1);
+                        if (ch == '!') {
+                            bitWriter.write(1, 1);
+                        }
+                        else{
+                            bitWriter.write(0,1);
+                        }
+                    }
                 }
-
-
             }
-
-
-
-
-
-
+            return bitWriter.extract();
         }
 
 
         public byte[] deCompress (String move){
-
-
-
 
         }
     }

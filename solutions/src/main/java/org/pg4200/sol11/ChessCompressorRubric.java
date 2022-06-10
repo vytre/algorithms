@@ -42,7 +42,6 @@ public class ChessCompressorRubric extends GenericCompressor{
                         writer.write(0, 1);
                     }
                 }
-
             }
         }
         return writer.extract();
