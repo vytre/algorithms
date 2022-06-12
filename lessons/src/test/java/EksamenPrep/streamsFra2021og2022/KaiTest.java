@@ -1,13 +1,10 @@
 package EksamenPrep.streamsFra2021og2022;
 
-import eksamenPrep.streamsFra2021og2022.Kai;
-import org.junit.jupiter.api.BeforeAll;
+import eksamenPrep.streams.Kai;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class KaiTest {
 

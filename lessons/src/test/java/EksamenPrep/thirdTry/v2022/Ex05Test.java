@@ -2,6 +2,8 @@ package EksamenPrep.thirdTry.v2022;
 
 import eksamenPrep.thirdTry.v2022.Ex05;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
 
@@ -16,6 +18,9 @@ class Ex05Test {
 
         String deCompressed = archive.deCompress(compressed);
         System.out.println(deCompressed);
+
+        assertEquals(data,deCompressed);
+
     }
 
 }
