@@ -15,7 +15,7 @@ class Ex01sTest {
 
 
        assertTrue("Is this an out of season april fools joke?".matches(myString));
-       assertTrue("Is this an out of season april fools joke!".matches(myString));
+       assertTrue("Is this an out of season april fools joke?".matches(myString));
 
        assertFalse("Is this an out of season april fools joke.".matches(myString));
 
