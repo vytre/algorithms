@@ -43,7 +43,7 @@ public class Ex02 {
         public V get(K key) {
             String myString = key.toString();
             int myInt = Integer.parseInt(myString);
-           return myTree[myInt].get(key);
+            return myTree[myInt].get(key);
         }
 
         @Override
