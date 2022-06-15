@@ -55,4 +55,12 @@ public class Ex04 {
                 .distinct()
                 .collect(Collectors.toCollection(ArrayList::new));
     }
+
+    public ArrayList<String> ex04lol(Program program){
+        return program.courses.stream()
+                .flatMap(course -> course.students.entrySet().stream())
+                .map(integerStudentEntry -> integerStudentEntry.getValue().lastName)
+                .distinct()
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
 }
