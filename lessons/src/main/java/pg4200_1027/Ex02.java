@@ -15,45 +15,64 @@ public class Ex02 {
             return keys.get(sel);
         }
 
-        public List<V> findPath(V start, V end){
-            if (!graph.containsKey(start) && !graph.containsKey(end)) {
-                return Collections.emptyList();
-            }
+        public void addEdge(V from, V to) {
+            Objects.requireNonNull(from);
+            Objects.requireNonNull(to);
 
-            if (start.equals(end)) {
-                //we do not consider cycles
+            addVertex(from);
+            addVertex(to);
+
+            graph.get(from).add(to);
+
+            if(! from.equals(to)) {
+                //ie, if not a self-loop
+                graph.get(to).add(from);
+            }
+        }
+
+
+        public List<V> findPath(V start, V end){
+            if(! graph.containsKey(start) || ! graph.containsKey(end)){
+                return null;
+            }
+            if(start.equals(end)){
                 throw new IllegalArgumentException();
             }
 
-            Deque<V> stack = new ArrayDeque<>();
+            Queue<V> queue = new ArrayDeque<>();
+            Map<V,V> bestParent = new HashMap<>();
 
-            List<V> paths = new ArrayList<>();
+            queue.add(start);
 
-            dfs(paths, stack, start, end);
+            mainLoop: while(! queue.isEmpty()){
 
-            return paths;
-        }
+                V parent = queue.poll();
 
-        private void dfs(List<V> paths, Deque<V> stack, V current, V end) {
+                for(V child : graph.get(parent)){
 
-            stack.push(current);
+                    if( child.equals(start) || bestParent.get(child) != null){
+                        continue;
+                    }
+                    bestParent.put(child, parent);
 
-            if (isPathTo(stack, end)) {
-                List<V> path = new ArrayList<>(stack);
-                Collections.reverse(path);
-                paths.add((V) path);
-                return;
-            }
-
-            for (V connected : getAdjacents(current)) {
-                if (stack.contains(connected)) {
-                    continue;
+                    if(child.equals(end)){
+                        break mainLoop;
+                    }
+                    queue.add(child);
                 }
-
-                dfs(paths, stack, connected, end);
-                //backtrack
-                stack.pop();
             }
+
+            if(! bestParent.containsKey(end)){
+                return null;
+            }
+
+            List<V> path = new ArrayList<>();
+            V current = end;
+            while (current != null){
+                path.add(0, current);
+                current = bestParent.get(current);
+            }
+            return path;
         }
     }
 }

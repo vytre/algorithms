@@ -5,4 +5,15 @@ So best-case when adding to a hashmap we get 0(1) complexity.
 Worst case is if we get a has collision, where the key has the same hash value
 Then the complexity will be 0(n), this is not that bad since if there is a hash-collision at all the list will most likely be very short. So basically same as a List.
 
+Path Finding in graphs
+In this course we mainly looked at 
+In my implementation of task 2, I used Breadth-First Search (BFS), BFS s
+
+
+
+
+
+
+Sources
+https://www.bigocheatsheet.com/
 
