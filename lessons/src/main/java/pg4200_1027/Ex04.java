@@ -4,6 +4,10 @@ package pg4200_1027;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Ex04 {
@@ -46,21 +50,30 @@ public class Ex04 {
         }
     }
 
-    public ArrayList<String> ex04(List<Program> pro){
-        return pro.stream()
-                .flatMap(program -> program.courses.stream())
-                .flatMap(course -> course.students.entrySet().stream())
-                .filter(integerStudentEntry -> integerStudentEntry.getKey() != null)
-                .map(integerStudentEntry -> integerStudentEntry.getValue().lastName)
-                .distinct()
+    // I tried to find out how to create Strings from streams but couldn't find out, I struggled to filter on one distinct value
+    // but at the same time map on another, so I had to use grandpa google and found the method distinctByKey on Stackoverflow
+    // The method checks if a value has been "checked" before
+
+    // DistinctByKey found on StackOverflow "Java 8 Distinct by property"
+    // https://stackoverflow.com/questions/23699371/java-8-distinct-by-property
+
+    // ex04 returns an ArrayList<Strings> of last names
+    // Same last names can occur, but the Student which the last names comes from is distinct, since they are filtered by StudentId
+    public ArrayList<String> ex04(Program program){
+        return program.courses.stream()
+                .flatMap(course -> course.students.values().stream())
+                .filter(distinctByKey(student -> student.studentId))
+                .map(student -> student.lastName)
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<String> ex04lol(Program program){
-        return program.courses.stream()
-                .flatMap(course -> course.students.entrySet().stream())
-                .map(integerStudentEntry -> integerStudentEntry.getValue().lastName)
-                .distinct()
-                .collect(Collectors.toCollection(ArrayList::new));
+
+
+    public  <T> Predicate<T> distinctByKey(
+            Function<? super T, ?> keyExtractor) {
+
+        Map<Object, Boolean> seen = new ConcurrentHashMap<>();
+        return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
     }
+
 }

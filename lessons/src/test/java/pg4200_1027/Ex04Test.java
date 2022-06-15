@@ -44,8 +44,6 @@ class Ex04Test {
         ArrayList<Ex04.Program> programs = new ArrayList<>();
         programs.add(program);
 
-        ArrayList<String> myStrings = ex04.ex04(programs);
-        System.out.println(myStrings);
 
     }
 
@@ -77,11 +75,14 @@ class Ex04Test {
         ArrayList<Ex04.Course> courses = new ArrayList<>();
 
         courses.add(tk4200);
+        courses.add(tk4200);
+
+
 
         Ex04.Program program = new Ex04.Program("Programming",courses);
 
 
-        ArrayList<String> myArray = ex04.ex04lol(program);
+        ArrayList<String> myArray = ex04.ex04(program);
         System.out.println(myArray);
     }
 

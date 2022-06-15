@@ -1,0 +1,8 @@
+Runtime Performance HashMap
+When adding(put) a key value pair to a hashmap we do not sort keys like we do in Binary-trees, we just hash them.
+So best-case when adding to a hashmap we get 0(1) complexity.
+
+Worst case is if we get a has collision, where the key has the same hash value
+Then the complexity will be 0(n), this is not that bad since if there is a hash-collision at all the list will most likely be very short. So basically same as a List.
+
+

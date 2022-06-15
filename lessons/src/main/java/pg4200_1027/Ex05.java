@@ -4,25 +4,31 @@ import org.pg4200.les11.BitReader;
 import org.pg4200.les11.BitWriter;
 
 public class Ex05 {
-
-
-
-
-
-
-
-
     public static class CourseFeedBack { // PG 4200 456987 2022 JUN 06
+
+
+        // I tried using a hashmap to get the full Program Name, but that caused more harm than good.
+        // I thought it would be better to submit something that works, rather than something that was more correct, but doesn't work.
+
+
+        /**
+         * Strings I compressed in my Tests
+         * PG4200:456987 / 2022-JUN-16. File: feedback-PG4200-456987.pdf;
+         * AI1701:987456 / 2021-AUG-13. File: feedback-AI1701-987456.pdf;
+         * FP1453:963258 / 2022-OCT-30. File: feedback-FP1453-963258.pdf;
+         * SC1007:741654 / 2022-JAN-15. File: feedback-SC1007-741654.pdf;
+         * DS1112:159753 / 2020-MAR-18. File: feedback-DS1112-159753.pdf;
+         * **/
 
         public byte[] compression(String feedBackList){
             BitWriter bitWriter = new BitWriter();
 
-            // Program Eg PG
+            // Program
             for (int i = 0; i < feedBackList.length(); i++) {
                 bitWriter.write(feedBackList.charAt(i),8);
                 bitWriter.write(feedBackList.charAt(i+1),8);
 
-                // CourseId Eg 4200
+                // CourseId
                 String courseNr = "";
                 for (int j = 2; j < 6; j++) {
                     char c = feedBackList.charAt(j);
@@ -30,7 +36,7 @@ public class Ex05 {
                 }
                 bitWriter.write(Integer.parseInt(courseNr),17);
 
-                // UniqueId Eg 456987
+                // UniqueId
                 String uniqueId = "";
                 for (int j = 7; j < 13; j++) {
                     char c = feedBackList.charAt(j);
@@ -38,7 +44,7 @@ public class Ex05 {
                 }
                 bitWriter.write(Integer.parseInt(uniqueId),20);
 
-                // Year Eg 2022
+                // Year
                 String year = "";
                 for (int j = 16; j < 20; j++) {
                     char c = feedBackList.charAt(j);
@@ -84,13 +90,14 @@ public class Ex05 {
                     j = 43;
                 }
 
+                // Program
                 bitWriter.write(feedBackList.charAt(i),8);
                 bitWriter.write(feedBackList.charAt(i+1),8);
 
-                // CourseId Eg 4200
+                // CourseId
                 bitWriter.write(Integer.parseInt(courseNr),17);
 
-                // Uni
+                // UniqueId
                 bitWriter.write(Integer.parseInt(uniqueId),20);
 
                 i+= 62;

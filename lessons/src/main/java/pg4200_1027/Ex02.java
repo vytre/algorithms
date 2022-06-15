@@ -1,67 +1,59 @@
 package pg4200_1027;
 
-import org.pg4200.les09.Graph;
+import org.pg4200.les09.UndirectedGraph;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Ex02 {
-    public static class tramAndMetro<V> implements Graph<V>{
+    public static class TramAndMetro<V> extends UndirectedGraph<V> {
 
-        @Override
-        public void addVertex(V vertex) {
-            
+        public V selectNodeRandomly(){
+            List<V> keys;
+            Random rand = new Random();
+            keys = List.copyOf(graph.keySet());
+            int sel = rand.nextInt(keys.size());
+            return keys.get(sel);
         }
 
-        @Override
-        public void addEdge(V from, V to) {
+        public List<V> findPath(V start, V end){
+            if (!graph.containsKey(start) && !graph.containsKey(end)) {
+                return Collections.emptyList();
+            }
 
+            if (start.equals(end)) {
+                //we do not consider cycles
+                throw new IllegalArgumentException();
+            }
+
+            Deque<V> stack = new ArrayDeque<>();
+
+            List<V> paths = new ArrayList<>();
+
+            dfs(paths, stack, start, end);
+
+            return paths;
         }
 
-        @Override
-        public int getNumberOfVertices() {
-            return 0;
-        }
+        private void dfs(List<V> paths, Deque<V> stack, V current, V end) {
 
-        @Override
-        public int getNumberOfEdges() {
-            return 0;
-        }
+            stack.push(current);
 
-        @Override
-        public void removeEdge(V from, V to) {
+            if (isPathTo(stack, end)) {
+                List<V> path = new ArrayList<>(stack);
+                Collections.reverse(path);
+                paths.add((V) path);
+                return;
+            }
 
-        }
+            for (V connected : getAdjacents(current)) {
+                if (stack.contains(connected)) {
+                    continue;
+                }
 
-        @Override
-        public void removeVertex(V vertex) {
-
-        }
-
-        @Override
-        public Collection<V> getAdjacents(V vertex) {
-            return null;
-        }
-
-        @Override
-        public List<V> findPathDFS(V start, V end) {
-            return null;
-        }
-
-        @Override
-        public List<V> findPathBFS(V start, V end) {
-            return null;
-        }
-
-        @Override
-        public Set<V> findConnected(V vertex) {
-            return null;
-        }
-
-        @Override
-        public Set<V> findConnected(Iterable<V> vertices) {
-            return null;
+                dfs(paths, stack, connected, end);
+                //backtrack
+                stack.pop();
+            }
         }
     }
 }
