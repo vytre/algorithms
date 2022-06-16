@@ -7,6 +7,9 @@ import java.util.*;
 public class Ex02 {
     public static class TramAndMetro<V> extends UndirectedGraph<V> {
 
+        // Code used in this task are the addEdge and findPathBFS methods from \les09\UndirectedGraph.java
+
+
         public V selectNodeRandomly(){
             List<V> keys;
             Random rand = new Random();
@@ -25,10 +28,10 @@ public class Ex02 {
             graph.get(from).add(to);
 
             if(! from.equals(to)) {
-                //ie, if not a self-loop
                 graph.get(to).add(from);
             }
         }
+
 
 
         public List<V> findPath(V start, V end){

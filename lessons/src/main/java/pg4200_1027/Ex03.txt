@@ -6,8 +6,20 @@ Worst case is if we get a has collision, where the key has the same hash value
 Then the complexity will be 0(n), this is not that bad since if there is a hash-collision at all the list will most likely be very short. So basically same as a List.
 
 Path Finding in graphs
-In this course we mainly looked at 
-In my implementation of task 2, I used Breadth-First Search (BFS), BFS s
+In this course we mainly looked at Depth-First Search (DFS) and Breadth-First Search (BFS)
+In my implementation of task 2, I used Breadth-First Search (BFS), BFS guarantees to find the "shortest" path, but this comes at a cost.
+BFS searches through all possible paths in order to find the shortest one, if you have a big graph (Like a graph of the Internet) this can become very expensive since you most of the time will be searching though paths you won't be using.
+
+DFS finds a path, but it is not guaranteed to be the best path. But with DFS you won't be checking all possible paths, so potentially save a lot of memory.
+Best case is that you find the shortest route in first try,
+worst case you go through the whole graph, when there actually was a connection fra A->B.
+
+
+
+
+
+
+
 
 
 
@@ -16,4 +28,4 @@ In my implementation of task 2, I used Breadth-First Search (BFS), BFS s
 
 Sources
 https://www.bigocheatsheet.com/
-
+Course Slide 9 Graphs
