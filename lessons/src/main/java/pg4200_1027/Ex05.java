@@ -10,7 +10,7 @@ public class Ex05 {
         // I tried using a hashmap to get the full Program Name, but that caused more harm than good.
         // I thought it would be better to submit something that works, rather than something that was more correct, but doesn't work.
         // I will submit my testFiles for this Exercise to show you what I managed to compress
-        
+
 
 
         /**
