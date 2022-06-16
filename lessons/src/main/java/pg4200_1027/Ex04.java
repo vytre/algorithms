@@ -59,6 +59,9 @@ public class Ex04 {
 
     // ex04 returns an ArrayList<Strings> of last names
     // Same last names can occur, but the Student which the last names comes from is distinct, since they are filtered by StudentId
+
+    // Preferably I would have the method return email-addresses, but I tried several different solutions with joining, but to no avail.
+
     public ArrayList<String> ex04(Program program){
         return program.courses.stream()
                 .flatMap(course -> course.students.values().stream())
