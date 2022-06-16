@@ -51,8 +51,8 @@ public class Ex04 {
     }
 
     // I tried to find out how to create Strings from streams but couldn't find out, I struggled to filter on one distinct value
-    // but at the same time map on another, so I had to use grandpa google and found the method distinctByKey on Stackoverflow
-    // The method checks if a value has been "checked" before
+    // but at the same time map on another. I found help on Stackoverflow.
+    // The method DistinctByKey uses a map to checks if a value has been "seen" before.
 
     // DistinctByKey found on StackOverflow "Java 8 Distinct by property"
     // https://stackoverflow.com/questions/23699371/java-8-distinct-by-property
